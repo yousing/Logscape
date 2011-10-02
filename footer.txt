@@ -1,0 +1,5 @@
+<address>
+	<p>IRC LOGSCAPE v0.8.7¦Â(BUILD:090601am) Powered by angeltale 2006~</p>
+	<p>Program:Arimori Yousing / Design:Sakamata Minamo.</p>
+	<p><a href="mailto:ceramicprincess@angeltale.net" >ceramicprincess&#64;angeltale.net</a></p>
+</address>

@@ -1,0 +1,151 @@
+<?php 
+include './menu.inc';
+
+//絵無しメニュー開始
+if($view_flag == "1"){ ?>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($cur_day);  ?>&name=<?php print($cur_file); ?>">絵あり</a></li>
+    <li><a href="logview.php?num=<?php print($cur_day);  ?>&name=<?php print($cur_file); ?>&flag=3">▼</a></li>
+</ul>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($yest_day);  ?>&name=log<?php print($yest_ymd); ?>&flag=1">まえのひ</a></li>
+    <li><a href="./index.php">インデックス</a></li>
+<?php
+    if($_GET['num'] == "" || $_GET['num'] == "0"){
+?>
+    <li><a href= "">つぎのひ</a></li>
+</ul>
+
+<?php
+    }else{ ?>
+        <li><a href= "logview.php?num=<?php print($next_day );  ?>&name=log<?php print($next_ymd); ?>&flag=1">つぎのひ</a></li>
+        </ul>
+        <?php }
+//ここまで
+//逆順メニュー開始
+}elseif($view_flag == "2"){ 
+        ?>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($cur_day);  ?>&name=<?php print($cur_file); ?>&flag=3">絵なし</a></li>
+    <li><a href="logview.php?num=<?php print($cur_day);  ?>&name=<?php print($cur_file); ?>">▲</a></li>
+</ul>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($yest_day);  ?>&name=log<?php print($yest_ymd); ?>&flag=2">まえのひ</a></li>
+    <li><a href="./index.php">インデックス</a></li>
+<?php
+    if($_GET['num'] == "" || $_GET['num'] == "0"){
+?>
+    <li><a href= "">つぎのひ</a></li>
+</ul>
+
+<?php
+    }else{ ?>
+        <li><a href= "logview.php?num=<?php print($next_day );  ?>&name=log<?php print($next_ymd); ?>&flag=2">つぎのひ</a></li>
+        </ul>
+<?php }
+//ここまで
+//逆順イメージ無し開始
+}elseif($view_flag == "3"){
+?>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($cur_day);  ?>&name=<?php print($cur_file); ?>&flag=2">絵あり</a></li>
+    <li><a href="logview.php?num=<?php print($cur_day);  ?>&name=<?php print($cur_file); ?>&flag=1">▲</a></li>
+</ul>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($yest_day);  ?>&name=log<?php print($yest_ymd); ?>&flag=3">まえのひ</a></li>
+    <li><a href="./index.php">インデックス</a></li>
+<?php
+    if($_GET['num'] == "" || $_GET['num'] == "0"){
+?>
+    <li><a href= "">つぎのひ</a></li>
+</ul>
+
+<?php
+    }else{ ?>
+        <li><a href= "logview.php?num=<?php print($next_day );  ?>&name=log<?php print($next_ymd); ?>&flag=3">つぎのひ</a></li>
+        </ul>
+        
+<?php }
+//ここまで
+//URLだけメニュー開始
+}elseif($view_flag  == "4"){
+?>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($cur_day);  ?>&name=<?php print($cur_file); ?>&flag=5">絵なし</a></li>
+</ul>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($yest_day);  ?>&name=log<?php print($yest_ymd); ?>&flag=4">まえのひ</a></li>
+    <li><a href="./index.php">インデックス</a></li>
+<?php
+    if($_GET['num'] == "" || $_GET['num'] == "0"){
+?>
+    <li><a href= "">つぎのひ</a></li>
+</ul>
+
+<?php
+    }else{ ?>
+        <li><a href= "logview.php?num=<?php print($next_day );  ?>&name=log<?php print($next_ymd); ?>&flag=4">つぎのひ</a></li>
+        </ul>
+        
+<?php }
+//ここまで
+//URLだけメニュー開始
+}elseif($view_flag == "5"){
+?>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($cur_day);  ?>&name=<?php print($cur_file); ?>&flag=4">絵あり</a></li>
+</ul>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($yest_day);  ?>&name=log<?php print($yest_ymd); ?>&flag=5">まえのひ</a></li>
+    <li><a href="./index.php">インデックス</a></li>
+<?php
+    if($_GET['num'] == "" || $_GET['num'] == "0"){
+?>
+    <li><a href= "">つぎのひ</a></li>
+</ul>
+
+<?php
+    }else{ ?>
+        <li><a href= "logview.php?num=<?php print($next_day );  ?>&name=log<?php print($next_ymd); ?>&flag=5">つぎのひ</a></li>
+        </ul>
+        
+<?php }
+//ここまで
+//標準処理開始
+}elseif($view_flag == "6"){
+?>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($yest_day);  ?>&name=log<?php print($yest_ymd); ?>&flag=6">まえのひ</a></li>
+    <li><a href="./index.php">インデックス</a></li>
+<?php
+    if($_GET['num'] == "" || $_GET['num'] == "0"){
+?>
+    <li><a href= "">つぎのひ</a></li>
+</ul>
+<?php
+}else{ ?>
+<li><a href= "logview.php?num=<?php print($next_day );  ?>&name=log<?php print($next_ymd); ?>&flag=6">つぎのひ</a></li>
+</ul>
+<?php }
+}else{
+?>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($cur_day);  ?>&name=<?php print($cur_file); ?>&flag=1">絵なし</a></li>
+    <li><a href="logview.php?num=<?php print($cur_day);  ?>&name=<?php print($cur_file); ?>&flag=2">▼</a></li>
+</ul>
+<ul class="guide">
+<?php // print($yest_ymd); ?>
+    <li><a href="logview.php?num=<?php print($yest_day);  ?>&name=log<?php print($yest_ymd); ?>">まえのひ</a></li>
+    <li><a href="./index.php">インデックス</a></li>
+<?php
+    if($_GET['num'] == "" || $_GET['num'] == "0"){
+?>
+        <li><a href= "">つぎのひ</a></li>
+        </ul>
+<?php }else{ ?>
+        <li><a href= "logview.php?num=<?php print($next_day );  ?>&name=log<?php print($next_ymd); ?>">つぎのひ</a></li>
+        </ul>     
+<?php 
+}
+}
+?>

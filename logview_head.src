@@ -1,0 +1,52 @@
+<?php
+
+if($_GET['name'] != ""){
+    $filename=$_GET['name'];
+    $path=$root_path.$filename ; 
+    $file_data=$filename ;
+}elseif($_GET['num'] != "" || $_GET['num'] != "0"){
+    $timestamp=mktime(0,0,0,date("m"),date("d")+$_GET['num'],date("y"));
+    $filename=date("ymd", $timestamp);
+    $path=$root_path."log".$filename ;
+    $file_data="log".$filename ;
+}else{
+    $filename=date("ymd", time());
+    $path=$root_path."log".$filename ;
+    $file_data="log".$filename ;
+    if(!file_exists($path))
+    {
+        $yesterday = strtotime("yesterday");
+        $filename=date("ymd", $yesterday);
+        $path=$root_path."log".$filename ;
+        $file_data="log".$filename ;
+    }
+}
+    if(!file_exists($path))
+    {
+        $yesterday = strtotime("yesterday");
+        $filename=date("ymd", $yesterday);
+        $path=$root_path."log".$filename ;
+        $file_data="log".$filename ;
+    }
+
+
+$file=@FOpen($path ,"r");
+if (FALSE == ($file = @FOpen($path , "r"))){
+    header("location: ./404.html");
+  exit(1);
+}
+setlocale(LC_ALL,'ja_JP');
+while($row=fgetcsv($file,1024," ")){$data[] = $row ;}
+fclose($file) ;
+//日本語を扱うので、文字コードを指定。
+mb_internal_encoding("EUC-JP");
+mb_regex_encoding("EUC-JP");
+/*読み込みファイル名指定
+~/logview.php?name=hogehogeで、/Users/celestia/log/angel/hogehogeを
+持ってくる。
+~/logview.php?num=０で当日のファイル
+~/logview.php?num=-1で前日のファイル
+マイナスが増えるたびに日が戻る。
+※正数を入れると未来のログを見に行こうとするので、エラーが出る。
+*/
+?>

@@ -1,0 +1,15 @@
+<?php
+if(!$_GET[name]){
+$cur_ymd = preg_replace("/^log/","",$filename[1]);
+$cur_y = substr($cur_ymd,0,2);
+$cur_m = substr($cur_ymd,2,2);
+$cur_d = substr($cur_ymd,4,2);
+$file_ymd = date("Y年n月j日",mktime(0,0,0,$cur_m,$cur_d,$cur_y));
+}
+
+$cur_ymd = preg_replace("/^log/","",$file_data);
+$cur_y = substr($cur_ymd,0,2);
+$cur_m = substr($cur_ymd,2,2);
+$cur_d = substr($cur_ymd,4,2);
+$view_date = date("Y年n月j日",mktime(0,0,0,$cur_m,$cur_d,$cur_y));
+?>

@@ -1,0 +1,16 @@
+<?php 
+include './menu.inc';
+?>
+<ul class="guide">
+    <li><a href="logview.php?num=<?php print($yest_day);  ?>&name=log<?php print($yest_ymd); ?>&flag=<?php print($view_flag);?>">まえのひ</a></li>
+    <li><a href="./index.php">インデックス</a></li>
+<?php
+    if($_GET['num'] == "" || $_GET['num'] == "0"){
+?>
+    <li><a href= "">つぎのひ</a></li>
+</ul>
+<?php
+    }else{ ?>
+        <li><a href= "<?php print($logview_select); ?>?num=<?php print($next_day );  ?>&name=log<?php print($next_ymd); ?>&flag=<?php print($view_flag);?>">つぎのひ</a></li>
+        </ul>
+<?php } ?>

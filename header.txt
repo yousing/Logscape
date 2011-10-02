@@ -1,0 +1,21 @@
+<?php   print("<?xml version=\"1.0\" encoding=\"euc-jp\"?>"); ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta name="viewport" content="width=320; initial-scale=1.0;
+maximum-scale=1.0; user-scalable=0;" />
+<link rev="made" href="ceramicprincess@angeltale.net" />
+<link rel="stylesheet" href="<?php print($css_html); ?>" type="text/css" />
+<title><?php print($cur_chanel); ?> - IRC LOGSCAPE.</title>
+</head>
+<body>
+<?php 
+get_topic($data);
+include './topic.tmp';
+include './logtime.src'; 
+?>
+<h1><img src="./irc-logscape-logo.gif" width="300" height="32" alt="angeltale irc logscape" /></h1>
+<p class="pankuz"><a href="../">ホーム</a> > <a href="./">インデックス</a> > <?php print($view_date); ?></p>
+<h2><?php print($cur_chanel); ?> ログ (<?php print($view_date); ?>)<br /><?php print($set_topic); ?> </h2>
